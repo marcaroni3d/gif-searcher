@@ -4,20 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API Test</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <img src="#" alt="">
 
-    <script>
-        const img = document.querySelector('img')
+    <p class="loading-text"></p>
+    
+    <button>New Image</button>
 
-        fetch('https://api.giphy.com/v1/gifs/translate?api_key=zhtTBSfywHzSGo8tDczGNW4T7rNgJ0pz&s=cats', {mode: 'cors'})
-            .then(function(response) {
-                return response.json()
-            })
-            .then(function(response) {
-                img.src = response.data.images.original.url
-            })
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
