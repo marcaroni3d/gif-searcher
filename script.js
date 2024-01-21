@@ -9,6 +9,7 @@ const loader = document.querySelector('.loading')
 
 let searchString = ''
 const defaultSearch = 'cats'
+let previousGif
 
 // LISTENERS
 newImageButton.onclick = fetchHandler
@@ -50,7 +51,9 @@ async function fetchHandler() {
             if (!response.ok) throw new Error ('Something went wrong')
         const gifs = await response.json()
             if (gifs.data.images === undefined) throw new Error ('No results found')
+            if (previousGif === gifs.data.images.original.url) fetchHandler() // prevents same gif showing twice in a row
         img.src = gifs.data.images.original.url
+        previousGif = img.src
     }
     catch(error) {
         displayError(error)
