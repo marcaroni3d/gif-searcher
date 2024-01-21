@@ -29,14 +29,21 @@ body {
     grid-area: label;
 }
 
+.error {
+    text-align: center;
+}
+
 .loading {
     width: 2rem;
     height: 2rem;
     border: 5px solid #f3f3f3;
-    border-top: 6px solid #9c41f2;
+    border-top: 6px solid #9933ff;
     border-radius: 100%;
     margin: auto;
     display: none;
+    position: absolute;
+    top: calc(50% - 1rem);
+    left: calc(50% - 1rem);
     animation: spin 1s infinite linear;
 }
 .loading.display {
@@ -49,6 +56,10 @@ body {
     to {
         transform: rotate(360deg);
     }
+}
+
+.image-wrapper {
+    position: relative;
 }
 
 img {
