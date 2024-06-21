@@ -1,4 +1,4 @@
-# API Test
+# Gif Searcher
 
 A simple gif searcher app, to practice API fetching.
 
